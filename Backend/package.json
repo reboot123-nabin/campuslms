@@ -24,6 +24,7 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.4",
     "nodemailer": "^6.7.2",
+    "react-toastify": "^8.1.0",
     "validator": "^13.7.0"
   }
 }

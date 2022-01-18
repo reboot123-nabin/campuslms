@@ -11,12 +11,14 @@ const sendToken = (user,statusCode,res)=>{
         ),
         httpOnly:true,
     };
-    // console.log('token', token)
+    console.log('token', token)
     res.status(statusCode).cookie("token",token,options).json({
         success:true,
+        message:'success',
         user,
         token,
     });
+
 };
 
 module.exports = sendToken;
