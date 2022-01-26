@@ -7,22 +7,14 @@ const sendEmail = async (options) =>{
 
     const transporter = nodeMailer.createTransport({
 
-        host:process.env.SMPT_HOST,
-
-        port:process.env.SMPT_PORT,
-
-        service:process.env.SMPT_SERVICE,
-
-        auth:{
-
-            user:process.env.SMPT_MAIL,
-
-            pass:process.env.SMPT_PASSWORD,
-
+        host: "smtp.mailtrap.io",
+        port: 2525,
+        secure:true,
+        auth: {
+          user: "a224b10a151537",
+          pass: "bd85ee4d215592",
         },
-
-
-
+        
     });
 
 

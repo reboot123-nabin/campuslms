@@ -28,8 +28,8 @@ exports.registerUser = catchAsyncErrors(async(req,res,next)=>{
         email,
         password,
         avatar:{
-            public_id:"this is my sample demo",
-            url:"profilePic",
+            public_id:"myCloud.public_id",
+            url:"myCloud.secure_url",
         },
     });
 
@@ -86,7 +86,27 @@ exports.logout = catchAsyncErrors(async(req,res,next)=>{
 
 // getUserDetails
 
+//get User details
 
+exports.getUserDetails = catchAsyncErrors(async(req,res,next)=>{
+
+    const user = await User.findById(req.user.id);
+
+    if(!user){
+
+      return next(new ErrorHandler("User Not found!",400));
+
+    }
+
+    res.status(200).json({
+
+      success:true,
+
+      user,
+
+    });
+
+  });
 
 //forgot password
 
@@ -166,3 +186,92 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
   
     sendToken(user, 200, res);
   });
+
+
+
+
+
+  // update user password
+
+exports.updatePassword = catchAsyncErrors(async(req,res,next)=>{
+
+  const user = await User.findById(req.user.id).select("+password");
+
+
+
+  const isPasswordMatched = await user.comparePassword(req.body.oldPassword);
+
+
+
+  if(!isPasswordMatched){
+
+      return next(new ErrorHandler("Old password is incorrect", 400));
+
+  }
+
+
+
+  if (req.body.newPassword !== req.body.confirmPassword){
+
+      return next(new ErrorHandler("Password does not match",400));
+
+  }
+
+
+
+  user.password = req.body.newPassword;
+
+
+
+  await user.save();
+
+  sendToken(user,200,res);
+
+});
+
+
+//update User Profile
+
+exports.updateProfile = catchAsyncErrors(async(req,res,next)=>{
+
+  const newUserData = {
+
+      name: req.body.name,
+
+      email:req.body.email,
+
+  };
+
+
+
+ 
+
+  const user = await User.findByIdAndUpdate(req.user.id,newUserData,{
+
+      new: true,
+
+      runValidators: true,
+
+      useFindAndModify: false,
+
+
+
+  });
+
+
+
+  res.status(200).json({
+
+      success: true,
+
+      message:"Updated!",
+
+      user,
+
+     
+
+
+
+  });
+
+});

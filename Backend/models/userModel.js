@@ -49,7 +49,14 @@ const userSchema = new mongoose.Schema({
         type:Date,
         default:Date.now,
     },
-
+    // tokens:[
+    //     {
+    //         token:{
+    //             type:String,
+    //             required:true
+    //         }
+    //     }
+    // ],
     resetPasswordToken: String,
     resetPasswordExpire:Date,
 
@@ -72,6 +79,22 @@ userSchema.methods.getJWTToken = function () {
       expiresIn: process.env.JWT_EXPIRE,
     });
   };
+//generating token
+
+
+// userSchema.methods.getJWTToken = async function () {
+//     console.log("here you reached generate token");
+//     try{
+//         let tokenthapa=jwt.sign({_id:this._id},process.env.SECRET_KEY);
+//         this.tokens=this.tokens.concat({token:tokenthapa});
+//         await this.save();
+//         return token;
+//     }
+//     catch(err){
+//         console.log(err);
+//     }
+//   };
+
 
 //Compare password
 userSchema.methods.comparePassword = async function(enterPassword){
