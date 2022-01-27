@@ -2,7 +2,8 @@
 *{
   margin:0;
   padding:0;
-  box-sizing: border-box;
+
+ 
   font-family: 'Poppins',sans-serif;
 }
 body{
@@ -21,6 +22,7 @@ body{
   background-image: url("../public/component.png");
   height:auto;
   width:100%;
+
   background-size:100% 100%;
 }
 .jumbotron{
@@ -70,7 +72,13 @@ nav{
   justify-content: center;
   align-items: center;
 }
+#course{
+  overflow-x: hidden;
+}
 
+#education{
+  overflow-x:hidden;
+}
 
 
 
@@ -78,7 +86,7 @@ nav{
   margin-top: 165px;
   /* width: 1750px; */
   position: relative;
-
+  overflow-x: hidden;
 
 }
 .buttonsection input[type="text"]{
@@ -218,6 +226,7 @@ i{
 
 #course{
   margin-top: 120px;
+  overflow-x: hidden;
 }
 #education{
   background-image: url("../public/Group 14.png");
@@ -333,9 +342,42 @@ i{
   background-size:cover;
 }
 
-.formleft:hover .after {
-  display: block;
-  background: rgba(0, 0, 0, .6);
+.navigation-bar li{
+  padding:0px 5px;
+}
+
+.navigation-bar li a{
+  position: relative;
+  /* font-size:17px; */
+  text-transform:uppercase;
+  font-family:Audiowide;
+  color:#fff;
+  margin-top: 20px;
+
+  letter-spacing: 0.5px;
+ 
+  
+}
+
+.navigation-bar li a:hover{
+  color:#ffffff;
+  transition: .9s;
+  opacity:0.4;
+}
+
+.navigation-bar li a::after{
+  content:'';
+  position:absolute;
+  background-color:#ffffff;
+  height:3px;
+  width:0%;
+  left:0;
+  bottom: 0px;
+  transition: 0.3s;
+
+}
+.navigation-bar li a:hover::after{
+   width:100%;
 }
 /*contact form end*/
 
@@ -359,6 +401,13 @@ i{
   font-weight: bold;
 }
 
+.page-footer{
+  background-color:#02A696;
+  font-size:20px;
+  color:white;
+  padding:60px;
+  margin-top:10px;
+}
 .footertextbox{
   margin-top:180px;
   display: flex;
@@ -500,9 +549,61 @@ margin:70px;
 
   
 }
-
-@media(max-width:768px){
-    .nav-item{
-        text-align: center !important;
-    }
+@media (max-width:556px){
+  
+.navigation-bar {
+  position: relative;
+  text-decoration: none;
+  text-transform:uppercase;
+  font-family:Audiowide;
+  padding: 20px;
+  color:#fff;
+  margin-top: 50px;
+  font-size:20px;
+  letter-spacing: 0.5px;
+  padding:0 10px;
 }
+.navigation-bar li a{
+  margin-top:80px;
+}
+.navigation-bar li a:hover{
+  color:#ffffff;
+  transition: .9s;
+  opacity:0.4;
+}
+
+.navigation-bar li a::after{
+  content:'';
+  position:absolute;
+  background-color:#ffffff;
+  height:3px;
+  width:0%;
+  left:0;
+  bottom: -5px;
+  transition: 0.3s;
+
+}
+.navigation-bar li a:hover::after{
+  width:0%;
+
+}
+}
+@media(max-width:768px){
+  /* body{
+    overflow-x: hidden;
+  } */
+  .nav-item{
+      text-align: center !important;
+  }
+ 
+
+}
+/* @media only screen and (min-width:768px) and (max-width:992px){
+  body{
+    overflow-x: hidden;
+  }
+    #education{
+      padding:10px;
+    }
+
+} */

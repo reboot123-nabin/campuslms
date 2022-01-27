@@ -41,84 +41,88 @@ const navigate=useNavigate();
 <section id="navigation">
 <div class="container-fluid">
 
-<nav class="navbar navbar-expand-lg ">
+<nav class="navbar navbar-expand-lg">
     <img src="think.png" alt="logo" class="logodesign" />
     <h4 class="logo">LOGO</h4>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
+    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse"
         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item mx-3">
-                <a class="nav-link" href="#" style={{color:'#f8f8ff'}} href="/">Home</a>
+    <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto navigation-bar">
+            <li class="nav-item mx-1">
+                <a class="nav-link" href="#"  href="/">Home</a>
             </li>
-            <li class="nav-item mx-3" >
-                <a class="nav-link " href="#" style={{color:'#f8f8ff'}}>Courses</a>
+            <li class="nav-item mx-1" >
+                <a class="nav-link " href="#" >Courses</a>
             </li>
 
-            <li class="nav-item mx-3">
-                <a class="nav-link" href="#" style={{color:'#f8f8ff'}}>Teacher</a>
+            <li class="nav-item mx-1">
+                <a class="nav-link" href="#" >Teacher</a>
             </li>
-            <li class="nav-item mx-3">
-                <a class="nav-link" href="#" style={{color:'#f8f8ff'}}>Price</a>
+            <li class="nav-item mx-1">
+                <a class="nav-link" href="#" >Price</a>
             </li>
-            <li class="nav-item mx-3">
-                <a class="nav-link" href="#" style={{color:'#f8f8ff'}}>Testimonial</a>
+            <li class="nav-item mx-1">
+                <a class="nav-link" href="#" >Testimonial</a>
             </li>
-            <li class="nav-item mx-3">
-                <a class="nav-link " href="#" style={{color:'#f8f8ff'}}>Blog</a>
+            <li class="nav-item mx-1">
+                <a class="nav-link " href="#" >Blog</a>
             </li>
-            <li class="nav-item mx-3">
-                <a class="nav-link" href="#" style={{color:'#f8f8ff'}}>Contact</a>
-            </li>
+        
         </ul>
-        <div class="navbar-nav ml-auto">
+        <form class="form-inline my-2 my-lg-0">
+        <div class="navbar-nav mx-auto p-5">
       
 
 
-{
-                    localStorage.getItem('token') ? (
+      {
+                          localStorage.getItem('token') ? (
+      
+                              <>
+                                <Dropdown style={{ maxHeight: "50px" }}>
+        <Dropdown.Toggle variant="success" id="dropdown-basic">
+          {user.email}
+        </Dropdown.Toggle>
+      
+        <Dropdown.Menu>
+          <Dropdown.Item href="/profile">Profile</Dropdown.Item>
+          <Dropdown.Item href="#/action-3" onClick={logout}>Logout</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+                              </>
+      
+                          ) : (
+                              <Dropdown>
+                              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                Login
+                              </Dropdown.Toggle>
+                            
+                              <Dropdown.Menu>
+                                <Dropdown.Item href="/login">Login</Dropdown.Item>
+                                <Dropdown.Item href="/register">Register</Dropdown.Item>
+                                <Dropdown.Item href="/profile" >Profile</Dropdown.Item>
+                              </Dropdown.Menu>
+                            </Dropdown>
+                              
+      
+      
+                          )
+                      }
+          
 
-                        <>
-                          <Dropdown>
-  <Dropdown.Toggle variant="success" id="dropdown-basic">
-    {user.email}
-  </Dropdown.Toggle>
-
-  <Dropdown.Menu>
-    <Dropdown.Item href="/profile">Profile</Dropdown.Item>
-    <Dropdown.Item href="#/action-3" onClick={logout}>Logout</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
-                        </>
-
-                    ) : (
-                        <Dropdown>
-                        <Dropdown.Toggle variant="success" id="dropdown-basic">
-                          Login
-                        </Dropdown.Toggle>
-                      
-                        <Dropdown.Menu>
-                          <Dropdown.Item href="/login">Login</Dropdown.Item>
-                          <Dropdown.Item href="/register">Register</Dropdown.Item>
-                          <Dropdown.Item href="/profile" >Profile</Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                        
-
-
-                    )
-                }
-        </div>
+              </div>
+            
+    </form>
+        
     </div>
+ 
 
 
-
-
+ 
 
 </nav>
 

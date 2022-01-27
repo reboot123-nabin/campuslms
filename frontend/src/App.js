@@ -7,6 +7,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Navigation from './Components/Navigation';
 import Footer from './Components/Footer';
 import Login from './Pages/User/Login';
+
+import Error from './Components/Error';
 import Registration from './Pages/User/Registration';
 import Profile from './Pages/User/Profile';
 import EditProfile from './Pages/User/EditProfile';
@@ -24,6 +26,7 @@ function App() {
     <Route path="/profile" exact element={<Profile/>}/>
     <Route path="/editprofile" exact element={<EditProfile/>}/>
     <Route path="/dashboard" exact element={<Dashboard/>}/>
+    <Route component={<Error/>}/>
     </Routes>
     <Footer/>
     </BrowserRouter>

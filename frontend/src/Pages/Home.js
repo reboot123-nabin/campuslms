@@ -202,26 +202,26 @@ setTimeout(type,200);
     </div>
 
 </div>
-<div className="container"  style={{color:'White'}}>
+<div className="container "  style={{color:'White'}}>
     <div className="row">
-        <div className="col-md-4 col-12 col-sm-12 col-lg-4 p-4">
+        <div className="col-md-4 col-12 col-sm-12 col-lg-4 p-4 ">
 
-            <div className="card" style={{ border:'none'}}  data-aos={'zoom-in-right'}>
+            <div className="card boxing" style={{ border:'none'}}  data-aos={'zoom-in-right'}>
                 <img className="card-img-top elon p-md-30 p-sm-30" src='billgate.jpg' alt="Card image cap" />
 
            
                 <div className="card-body" style={{background: '#02A696'}}>
-                 <div className="container">
+                 <div className="container-row">
                      <div className="row">
-                         <div className="col-md-6">
+                         <div className="col-md-6 col-lg-6 col-12">
                              <h5>Bill Gates</h5>
                              <p>UI/UX Designer</p>
                          </div>
-                         <div className="col-md-6">
+                         <div className="col-md-6 col-lg-6 col-12  ">
 
-                            <i className="fab fa-facebook fa-2x "></i>
-                            <i className="fab fa-twitter fa-2x"></i>
-                            <i className="fab fa-instagram fa-2x "></i>
+                            <i className="fab fa-facebook fa-2x m-2"></i>
+                            <i className="fab fa-twitter fa-2x m-2"></i>
+                            <i className="fab fa-instagram fa-2x m-2"></i>
                     
                 
                          </div>
@@ -230,12 +230,12 @@ setTimeout(type,200);
                 </div>
               </div>
         </div>
-        <div className="col-md-4 col-12 col-sm-12 col-lg-4 p-2 mt-1" data-aos={'zoom-in'} >
-            <div className="card" style={{ border:'none'}}  >
+        <div className="col-md-4 col-12 col-sm-12 col-lg-4 p-2 mt-1  " data-aos={'zoom-in'} >
+            <div className="card boxing" style={{ border:'none'}}  >
                 <img className="card-img-top elon p-md-30 p-sm-30" src="mark.jpg" alt="Card image cap" style={{height:'20rem'}}/>
 
                 <div className="card-body" style={{background: '#02A696'}}>
-                    <div className="container">
+                    <div className="container-row">
                         <div className="row">
                             <div className="col-md-6 col-lg-6 col-12">
                                 <h5>Bill Gates</h5>
@@ -243,30 +243,30 @@ setTimeout(type,200);
                             </div>
                             <div className="col-md-6 col-lg-6 col-12">
 
-                                <i className="fab fa-facebook fa-2x "></i>
-                                <i className="fab fa-twitter fa-2x"></i>
-                                <i className="fab fa-instagram fa-2x "></i>
+                                <i className="fab fa-facebook fa-2x m-2"></i>
+                                <i className="fab fa-twitter fa-2x m-2"></i>
+                                <i className="fab fa-instagram fa-2x m-2"></i>
                             </div>
                         </div>
                     </div>
                    </div>
               </div>
         </div>
-        <div className="col-md-4 col-lg-4 col-sm-12 col-12 p-4"  data-aos={'zoom-in-left'}>
-            <div className="card" style={{ border:'none'}} >
+        <div className="col-md-4 col-lg-4 col-sm-12 col-12 p-4 "  data-aos={'zoom-in-left'}>
+            <div className="card boxing" style={{ border:'none'}} >
                 <img className="card-img-top elon p-md-30 p-sm-30" src="mark.jpg"  alt="Card image cap"/>
 
                 <div className="card-body" style={{background: '#02A696'}}>
-                    <div className="container">
+                    <div className="container-row">
                         <div className="row">
-                            <div className="col-md-6">
+                            <div className="col-md-6 col-lg-6 col-12">
                                 <h5>Bill Gates</h5>
                                 <p>UI/UX Designer</p>
                             </div>
-                            <div className="col-md-6">
-                                <i className="fab fa-facebook fa-2x "></i>
-                                <i className="fab fa-twitter fa-2x"></i>
-                                <i className="fab fa-instagram fa-2x "></i>
+                            <div className="col-md-6 col-lg-6 col-12">
+                                <i className="fab fa-facebook fa-2x m-2"></i>
+                                <i className="fab fa-twitter fa-2x m-2"></i>
+                                <i className="fab fa-instagram fa-2x m-2"></i>
                             </div>
                         </div>
                     </div>
@@ -286,7 +286,7 @@ setTimeout(type,200);
 <div className="toggle2">
 </div>
 </div>
-</section>
+</section> 
 
 
 
@@ -305,7 +305,7 @@ setTimeout(type,200);
 
  
 
-<section id="information" className="mt-5">
+ <section id="information" className="mt-5">
 <div className="jumbotron jumbotron-fluid ">
     <div className="container-fluid " >
         <h1 className="display-8 text-center" style={{fontweight:'bold',fontfamily:'Times New Roman'}}>Get In Touch</h1>
@@ -374,7 +374,7 @@ setTimeout(type,200);
     </div>
 </div>
 </div>
-</section> 
+</section>  
 
   </div>
   );
